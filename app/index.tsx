@@ -1,24 +1,18 @@
-import { Link } from "expo-router";
-import { StatusBar } from "expo-status-bar";
-import { Button, StyleSheet, Text, View } from "react-native";
+import { LinearGradient } from "expo-linear-gradient";
+import { StyleSheet } from "react-native";
+import StartScreen from "./start-game";
 
 export default function HomeScreen() {
   return (
-    <View style={styles.container}>
-      <Text>Hello world!!!</Text>
-      <Text>Hello world!!!</Text>
-      <Link href={"/start-game"}>Start Game</Link>
-      <Button title="Start Game" />
-      <StatusBar style="auto" />
-    </View>
+    <LinearGradient colors={["#4e0329", "#ddb52f"]} style={styles.container}>
+      <StartScreen />
+    </LinearGradient>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#fff",
     alignItems: "center",
-    justifyContent: "center",
   },
 });
