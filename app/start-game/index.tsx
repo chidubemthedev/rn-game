@@ -7,7 +7,13 @@ type Props = {};
 const StartScreen = (props: Props) => {
   return (
     <View style={styles.container}>
-      <TextInput />
+      <TextInput
+        style={styles.numberInput}
+        maxLength={2}
+        keyboardType="number-pad"
+        autoCapitalize="none"
+        autoCorrect={false}
+      />
       <Button title="Reset" />
       <Button title="Confirm" />
     </View>
@@ -28,5 +34,16 @@ const styles = StyleSheet.create({
     shadowOffset: { width: 0, height: 2 },
     shadowRadius: 6,
     shadowOpacity: 0.25,
+  },
+  numberInput: {
+    height: 60,
+    fontSize: 32,
+    borderBottomColor: "#ddb52f",
+    borderBottomWidth: 1,
+    color: "#ddb52f",
+    marginVertical: 8,
+    fontWeight: "bold",
+    width: 50,
+    textAlign: "center",
   },
 });
