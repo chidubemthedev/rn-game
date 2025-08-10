@@ -1,10 +1,12 @@
 import Button from "@/components/ui/Button";
+import { useRouter } from "expo-router";
 import React, { useState } from "react";
 import { Alert, StyleSheet, TextInput, View } from "react-native";
 
 type Props = {};
 
 const StartScreen = (props: Props) => {
+  const router = useRouter();
   const [enteredNumber, setEnteredNumber] = useState<string>("");
 
   const resetInputHandler = () => {
@@ -23,7 +25,10 @@ const StartScreen = (props: Props) => {
       return;
     }
 
-    // props.onStartGame(chosenNumber);
+    router.navigate({
+      pathname: "/game",
+      params: { userNumber: chosenNumber },
+    });
   };
 
   return (
