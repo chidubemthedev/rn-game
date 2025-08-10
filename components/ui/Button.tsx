@@ -14,7 +14,11 @@ const Button = ({ title }: Props) => {
     <View style={styles.buttonOuterContainer}>
       <Pressable
         onPress={pressHandler}
-        style={styles.buttonInnerContainer}
+        style={({ pressed }) =>
+          pressed
+            ? [styles.buttonInnerContainer, styles.pressed]
+            : styles.buttonInnerContainer
+        }
         android_ripple={{ color: "#640233" }}
       >
         <Text style={styles.buttonText}>{title}</Text>
@@ -44,5 +48,8 @@ const styles = StyleSheet.create({
   buttonText: {
     color: "white",
     textAlign: "center",
+  },
+  pressed: {
+    opacity: 0.75,
   },
 });
