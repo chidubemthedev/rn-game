@@ -14,8 +14,14 @@ const StartScreen = (props: Props) => {
         autoCapitalize="none"
         autoCorrect={false}
       />
-      <Button title="Reset" />
-      <Button title="Confirm" />
+      <View style={styles.buttonsContainer}>
+        <View style={styles.buttonContainer}>
+          <Button title="Reset" />
+        </View>
+        <View style={styles.buttonContainer}>
+          <Button title="Confirm" />
+        </View>
+      </View>
     </View>
   );
 };
@@ -24,6 +30,9 @@ export default StartScreen;
 
 const styles = StyleSheet.create({
   container: {
+    justifyContent: "center",
+    alignItems: "center",
+    gap: 10,
     padding: 16,
     marginTop: 100,
     marginHorizontal: 24,
@@ -45,5 +54,11 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
     width: 50,
     textAlign: "center",
+  },
+  buttonsContainer: {
+    flexDirection: "row",
+  },
+  buttonContainer: {
+    flex: 1,
   },
 });
