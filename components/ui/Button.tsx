@@ -3,17 +3,14 @@ import { Pressable, StyleSheet, Text, View } from "react-native";
 
 type Props = {
   title: string;
+  onPress: () => void;
 };
 
-const Button = ({ title }: Props) => {
-  const pressHandler = () => {
-    console.log("Pressed");
-  };
-
+const Button = ({ title, onPress }: Props) => {
   return (
     <View style={styles.buttonOuterContainer}>
       <Pressable
-        onPress={pressHandler}
+        onPress={onPress}
         style={({ pressed }) =>
           pressed
             ? [styles.buttonInnerContainer, styles.pressed]
