@@ -1,3 +1,4 @@
+import Title from "@/components/title";
 import { useLocalSearchParams } from "expo-router";
 import React from "react";
 import { StyleSheet, Text, View } from "react-native";
@@ -8,7 +9,7 @@ const GameScreen = (props: Props) => {
   const params = useLocalSearchParams<{ userNumber: string }>();
   return (
     <View style={styles.container}>
-      <Text>Opponent&apos;s Guess</Text>
+      <Title title="Opponent's Guess" />
       <Text>{params.userNumber}</Text>
       <View>
         <Text>Higher or lower?</Text>
