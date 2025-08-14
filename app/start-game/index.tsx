@@ -1,4 +1,5 @@
 import Button from "@/components/ui/Button";
+import { Colors } from "@/constants/Colors";
 import { useRouter } from "expo-router";
 import React, { useState } from "react";
 import { Alert, StyleSheet, TextInput, View } from "react-native";
@@ -65,7 +66,7 @@ const styles = StyleSheet.create({
     marginTop: 100,
     marginHorizontal: 24,
     borderRadius: 8,
-    backgroundColor: "#3b021f",
+    backgroundColor: Colors.light.background,
     elevation: 4,
     shadowColor: "black",
     shadowOffset: { width: 0, height: 2 },
@@ -75,9 +76,9 @@ const styles = StyleSheet.create({
   numberInput: {
     height: 60,
     fontSize: 32,
-    borderBottomColor: "#ddb52f",
+    borderBottomColor: Colors.light.accent,
     borderBottomWidth: 1,
-    color: "#ddb52f",
+    color: Colors.light.accent,
     marginVertical: 8,
     fontWeight: "bold",
     width: 50,
